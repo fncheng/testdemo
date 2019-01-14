@@ -1,0 +1,37 @@
+﻿@model Test3.Models.LoginModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>用户登录</title>
+</head>
+<body>
+    <!--Html.BeginForm()等同于在html代码里写<form>....</form>-->
+    @using (Html.BeginForm())
+    {
+        <div>
+            用户名:
+        </div>
+        <div>
+            @*创建用户名文本框，等同于<input type="text" name="name" value="" />*@
+            @Html.TextBoxFor(model=>model.UserName)
+        </div>
+        <div>
+            密码:
+        </div>
+        <div>
+            <!--创建密码文本框，等同于<input type="password" />-->
+            @Html.PasswordFor(model=>model.Password)
+        </div>
+        <div>
+            <input type="submit" name="name" value="登陆" />
+        </div>
+    }
+</body>
+</html>
